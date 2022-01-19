@@ -21,39 +21,6 @@
 <!-- BACKGROUND -->
 <div class="background">
     <!-- HEADER -->
-<div class="container">
-        <h1>My Wand Collection</h1>
-
-        <!-- navigation -->
-
-<nav class="mt-5 subFont">
-    <ul class="nav nav-pills" role="tablist">
-        <li class="nav-items">
-            <a class="nav-link active" aria-current="page" role="tab" data-bs-toggle="pill" data-bs-target="#wishlist">Wishlist</a>
-        </li>
-        <li class="nav-items">
-            <a class="nav-link" aria-current="page" data-bs-toggle="pill" data-bs-target="#collection" role="tab">My Collection</a>
-        </li>
-        <li class="nav-items">
-            <a class="nav-link" aria-current="page" data-bs-toggle="pill" data-bs-target="#add-item" role="tab">Add a wand</a>
-        </li>
-    </ul>
-</nav>
-
-<div id="wishlist">
-    <div class="row">
-        <div class="col-md-6 col-lg-4">
-            <div class="img-thumbnail">
-                <img src="" alt="">
-                <caption>
-                    <h2></h2>
-                    <p></p>
-                </caption>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
     <span></span>
     <span></span>
     <span></span>
@@ -105,6 +72,61 @@
     <span></span>
     <span></span>
  </div>
+ <div class="container">
+        <h1>My Wand Collection</h1>
+
+        <!-- navigation -->
+
+<nav class="my-5 subFont">
+    <ul class="nav nav-pills" role="tablist">
+        <li class="nav-items">
+            <a class="nav-link active" aria-current="page" role="tab" data-bs-toggle="pill" data-bs-target="#wishlist">Wishlist</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" aria-current="page" data-bs-toggle="pill" data-bs-target="#collection" role="tab">My Collection</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" aria-current="page" data-bs-toggle="pill" data-bs-target="#add-item" role="tab">Add a wand</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="tab-content">
+        <div class="tab-pane active" id="wishlist" role="tabpanel">
+        <div class="row">
+
+<?php 
+require "php/database.php";
+$db = Database::connect();
+$statement = $db->prepare('SELECT * FROM wishlist');
+if($statement->execute()){
+    while($item = $statement->fetch(PDO::FETCH_ASSOC)){
+        echo '<div class="col-md-6 col-lg-4">
+                <div class="img-thumbnail">';
+
+        echo ' <img class="img-fluid" src="images/'. $item['image'] .'" alt="'. $item['firstName'] . $item['lastName'] .'\'s Wand">';
+
+        echo ' <div class="caption">
+        <h2>'. $item['firstName'] .' '. $item['lastName'] .'</h2>';
+
+        echo '<p>Description here</p>';
+
+        echo '<p class="fw-bold">'. $item['container'] .'</p>';
+
+        echo '<span class="price badge rounded-pill bg-dark">'. number_format($item['price'], 2, '.', '') .' €</span>';
+
+        echo '</div>
+        </div>
+    </div>';
+    }
+}
+
+?>
+        
+    </div>
+    </div>
+</div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

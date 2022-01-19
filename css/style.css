@@ -1,4 +1,4 @@
-html {
+body {
     font-family: 'Hind Madurai', serif;
 }
 
@@ -15,6 +15,10 @@ h1 {
     text-shadow: 10px 8px 10px rgba(0,0,0,0.9);
 }
 
+.container {
+    position: relative;
+}
+
 /* Navigation */
 
 .nav {
@@ -26,7 +30,7 @@ h1 {
     height: 60px;
 }
 
-.active {
+.nav-link.active {
     background:#8a6b08 !important;
 }
 
@@ -40,6 +44,41 @@ h1 {
 
 .nav-link:hover {
     color: #8a6b08;
+}
+
+/* Tabs Content */
+
+.img-thumbnail {
+    background-image: url(../images/paper-texture.8da9bc39.jpg);
+    background-size: contain;
+    max-height: 450px;
+    width: 415px;
+    margin-bottom: 40px;
+}
+
+.img-thumbnail h2 {
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 4px 5px 7px rgba(37, 37, 37,0.6);
+}
+
+.caption {
+    padding-left : 5px;
+}
+
+.caption p {
+    font-size: 18px;
+}
+
+.img-thumbnail .price {
+    background: #000 !important;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    padding: 10px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    float: right;
+    transform: translate(-20px, -50px);
 }
 
 
