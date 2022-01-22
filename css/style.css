@@ -8,7 +8,7 @@ body {
 
 h1 {
     font-family: 'Harry Potter', sans-serif;
-    color: rgb(199, 156, 15);
+    color: #c79c0f;
     text-align: center;
     margin-top: 100px;
     font-size: 75px;
@@ -81,6 +81,28 @@ h1 {
     transform: translate(-20px, -50px);
 }
 
+#add-wand {
+    background: rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.addWand h2 {
+    font-family: 'Harry Potter';
+    color : #c79c0f;
+    text-align: center;
+    text-shadow: 7px 6px 7px rgba(0,0,0,0.5);
+}
+
+#addBtn {
+    background: #c79c0f;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
 
 /* Animated Backgorund */
 
