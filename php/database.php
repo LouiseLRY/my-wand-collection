@@ -3,8 +3,8 @@
 class Database 
 {
     private static $dbHost = "localhost";
-    private static $dbName = "my_wand_collection";
-    private static $dbUser = "root";
+    private static $dbName = "u278308625_wandsHP";
+    private static $dbUser = "u278308625_Louise";
     private static $dbPassword = "LouiseBDD951";
 
     private static $connection = null;
